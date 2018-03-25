@@ -1,0 +1,11 @@
+# ControlTypes
+Key     Type    Units   Min   Max   Increment
+Mix     Int     ""      0     100   1
+RelMix  Discrete 21 A10+B0 A10+B01 A10+B02 A10+B03 A10+B04 A10+B05 A10+B06 A10+B07 A10+B08 A10+B09 A10+B10 A09+B10 A08+B10 A07+B10 A06+B10 A05+B10 A04+B10 A03+B10 A02+B10 A01+B10 A00+B10
+Delay   Int     mS      0     3000  0
+Fbk     Int     ""      0     110   1
+XFade   Int     ms      3     200
+Depth   Int     ""      0     10    1
+Speed   Float   Hz      0.00  5.01
+Filter  Int     ""      -100  100   1
+FType   Discrete 3  Lowpass Bandpass Highpass
