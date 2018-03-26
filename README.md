@@ -1,6 +1,8 @@
 H9 Remote v 1.0.0
 =================
 
+![Preview image of plugin in Ableton Live effects row](docs/images/preview.png)
+
 Copyright 2018. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
 
 *Eventide and the Eventide logo are a registered trademark of Eventide, Inc.  The names of various algorithms may also be trademarks or registered trademarks of Eventide Inc., and are referenced herein for compatibility and interoperability only.*
