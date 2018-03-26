@@ -1,34 +1,47 @@
 H9 Remote v 1.0.0
 =================
 
-Copyright 2018 Daniel Collins. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved. This software comes with NO WARRANTY, including suitability for purpose, and by using this software you waive any and all claims against the author or his assignees for any consequences, real or imagined, arising from, out of, or in conjunction with, said use.
+Copyright 2018. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
+
+*Eventide and the Eventide logo are a registered trademark of Eventide, Inc.  The names of various algorithms may also be trademarks or registered trademarks of Eventide Inc., and are referenced herein for compatibility and interoperability only.*
+
+*This software is not produced by, nor affiliated in any way with, Eventide Inc. Please direct all issues or feature requests through this github page.*
 
 # Description
 
-The H9 Remote is a Max For Live (M4L) Audio Effect plugin which, while it does not alter your audio in any way internally, uses MIDI as a sideband control for an Eventide H9 stompbox.
+The H9 Remote is a Max For Live (M4L) Audio Effect plugin which can control an attached H9 stompbox in real time, supporting Ableton Live's automation and MIDI mapping and enabling saving the pedal preset state in a Live set or Live preset for future recall, even if the pedal has been completely reprogrammed in the meantime.
 
-The intended use case is either as a standalone audio effect on a track, to visually represent where the H9 would be in the signal chain, either in combination with an External Audio Effect plugin to support the actual audio routing, or to manage an in-line H9 attached to the instrument directly. *Note: This plugin processes no audio directly. It only controls an attached H9.*
-
-The plugin is specifically designed to allow track automation of H9 parameters as if the user were manipulating the knobs in realtime on the front panel, using MIDI CC.
+*Note: This plugin processes no audio directly. It only controls an attached H9.*
 
 Basic features include:
 
+* Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 49 algorithms currently implemented in the H9 Max.
 * Does not need the device to contain the required preset - can set any algorithm and module directly.
 * Operates entirely independently of the device's preset list - Does not overwrite any presets on the device.
 * Supports Ableton M4L presets, so can store a completely separate set of presets than what is on the device.
 * Saves the device configuration in the preset - no accidentally configuring the wrong H9 if you have multiple in a chain!
 * Receives and transmits knob, expression, and hotswitch changes from the pedal, for track automation recording, live performance, etc.
 * Supports Push and Live MIDI mapping to extend the controls for your H9 into the physical realm.
-* Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live file on open - ensuring your project loads with the right effects!
+* Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live file on open - ensuring your project re-opens with the right effects on the right pedal automatically.
 * Allows you to send expression to the H9 even if you don't have an expression pedal connected.
 
+**Note:** For the optimal experience, this plugin makes use of the [DSEG14 font family](https://github.com/keshikan/DSEG) and [Dotrice](https://fontlibrary.org/en/font/dotrice). Please download and install those families to see the LCD in a slightly-closer match to the actual Factor and H9 stompbox displays.
+
+Things that are not supported:
+
+* Enable/disable of the plugin.
+* Multiple instances of the plugin connected to the same H9 in the same Live set.
+* Any controls other than the 10 knobs, the epxression pedal, and the "performance switch" (repeat/freeze/hotswitch). E.g. the looper functionality or pedal bypass.
+* Turning your H9 Core or Standard into a Max (unless you own a Max already in which case your Core's additional algorithms will be automatically unlocked once you connect the Core or Standard to your account).
+* Auto-configuration of your H9 for you.
+* Routing your audio to and from the H9.
 
 # Compatibility and Credit
 
 H9 Remote is compatible with Ableton Live 9 and 10. No guarantees are made of compatiblity with any other version, although it might work.
 It has only been tested on Mac, and no guarantee of compatiblity with Windows is offered nor is planned to be.
 
-A basic undestanding of MIDI, channels, CC numbers, and device configuration/operation is assumed. This is not a tutorial.
+A basic understanding of MIDI, channels, CC numbers, and device configuration/operation is assumed. This is not a tutorial.
 
 The H9 Remote includes the imp.MIDI toolkit from The Impersonal Stereo (https://www.theimpersonalstereo.com/max-externals/) with gratefulness to David Butler. No ownership of this external is in any way implied or asserted.
 
@@ -38,25 +51,25 @@ Before the plugin can correctly connect to your H9, you must set a few parameter
 
 Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 explains how to enter System Mode, and the following pages explain how to navigate through these modes. The necessary settings are entirely under the MIDI menu and are as follows:
 
-[RCV CH] : Set this to whatever MIDI channel you want. If you'll be using this H9 via USB, you can set this to 1, but if you'll be using it over DIN MIDI you'll need to ensure that this channel is unique to this device.
-[XMT CH] : Ideally this should be set to the same thing as RCV CH. Only make them different if you are dead certain you know what you're doing.
-[RCV.CTL] : This sets up the H9 to receive the knob and expression changes from the remote. Set up as follows:
-  [PSW] : 71 (or choose your own value, but you'll need to manually configure the plugin then)
-  [EXP] : 11 (the default MIDI CC for expression)
-  Ensure KB0-KB9 map to 22..31 - this is the default but if you or a previous owner customized these values, you'll need to set them back to this range, and sequential.
-  You can set the other controls to receive CCs as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything, though.
-[XMT.CTL] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation).
-  [PSW] : 71. Same as under [RCV.CTL]
-  [EXP] : 11.
-  Ensure KB0-KB9 map to 22..31 just as for the RCV.CTL settings.
-  You can set the other contorls to send CC as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything though. Best to make sure these values match with the ones set in RVC.CTL.
-[XMT.PC] : Does not matter as far as the plugin is concerned, but OFF can prevent MIDI loops in some cases.
-[CTL.XMT] : Set to ON. This is essential.
-[PGM.XMT] : Set to ON. This may be supported in a near-future version.
-[SYS ID] : Leave at 1 unless you have more than one H9, then see the cautions under the following section "Multiple H9s".
-[OUTPUT] : Merge is generally safe, but the proper value here depends on if you're using DIN MIDI and what your routing looks like. You'll need to use your own judgement here.
-[CLK IN] : ON
-[CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo, then set this to ON.
+- [RCV CH] : Set this to whatever MIDI channel you want. If you'll be using this H9 via USB, you can set this to 1, but if you'll be using it over DIN MIDI you'll need to ensure that this channel is unique to this device.
+- [XMT CH] : Ideally this should be set to the same thing as RCV CH. Only make them different if you are dead certain you know what you're doing.
+- [RCV.CTL] : This sets up the H9 to receive the knob and expression changes from the remote. Set up as follows:
+  - [PSW] : 71 (or choose your own value, but you'll need to manually configure the plugin then)
+  - [EXP] : 11 (the default MIDI CC for expression)
+  - Ensure KB0-KB9 map to 22..31 - this is the default but if you or a previous owner customized these values, you'll need to set them back to this range, and sequential.
+  - You can set the other controls to receive CCs as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything, though.
+- [XMT.CTL] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation).
+  - [PSW] : 71. Same as under [RCV.CTL]
+  - [EXP] : 11.
+  - Ensure KB0-KB9 map to 22..31 just as for the RCV.CTL settings.
+  - You can set the other contorls to send CC as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything though. Best to make sure these values match with the ones set in RVC.CTL.
+- [XMT.PC] : Does not matter as far as the plugin is concerned, but OFF can prevent MIDI loops in some cases.
+- [CTL.XMT] : Set to ON. This is essential.
+- [PGM.XMT] : Set to ON. This may be supported in a near-future version.
+- [SYS ID] : Leave at 1 unless you have more than one H9, then see the cautions under the following section "Multiple H9s".
+- [OUTPUT] : Merge is generally safe, but the proper value here depends on if you're using DIN MIDI and what your routing looks like. You'll need to use your own judgement here.
+- [CLK IN] : ON
+- [CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo, then set this to ON.
 
 With these settings, minimal configuration of the plugin will be necessary. If you have only one H9, you can skip straight on to the Plugin Configuration.
 
@@ -90,3 +103,49 @@ To test that the plugin is communicating with your H9, you can now press the "Up
 
 # Basic Operation
 
+Where to put the plugin really depends on your workflow:
+* If you have a fixed studio setup where your H9(s) is/are in series with an instrument, e.g. your guitar or synth play directly into a pedalboard containing one or more H9s, and that's the setup for those H9s for the Live session you're working in, then it makes most sense to drop those in as audio effects on that instrument's primary audio channel.
+* If you have the H9 in question on a sidechain on your mixing board or audio interface, such that you can route multiple effects through it, it makes the most sense to drop the H9 Remote plugin into a return channel, as if it were a sidechained audio effect in Live.
+* If you are using the H9 as an external processor of an audio track or MIDI instrument in Live, you can treat it as either of the above cases, depending on if you are routing only that instrument through it or using it as an auxiliary effect.
+
+In all cases, if you make use of your audio interface to re-route the signal through the H9, combining the H9 Remote with an External Audio Effect into an effects rack makes sense, as the unit then behaves much like the H9 would physically, in that audio in and out of the interface is routed directly through the H9, which is under control of the H9 Remote plugin immediately following the External Audio Effect.
+
+**Note:** At present, the enable/disable feature of the plugin takes no effect. This will likely change in an upcoming version.
+
+The general workflow when using this plugin is as follows:
+
+* If the H9 currently has the effect you want to save in it, use the "Sync Up" button (the upward facing arrow) to LOAD the H9's configuration into the plugin. The knobs and algorithm will be updated to match the internal state of the H9, and any movement of the knobs will be reflected in the H9's settings and vice versa.
+* If you wish to choose the setting via the plugin, flipping to the "Algo" page will display the list of modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) from which the algorithms derive. Choosing the desired module will load the core algorithms available into the algorithm dropdown, just above the preset name. Clicking the algorithm menu will allow you to choose the desired algorithm, and from there you can adjust the knobs to your liking. The module and algorithm changes will automatically sync to the H9, but will not be saved as a preset on the device, nor will overwrite the current preset. They go in a special mode (Preset 0) called "working memory" which is a temporary configuration of the pedal intended for precisely this sort of use.
+* If you have a previously saved preset, loading that preset will automatically push its settings to the pedal that it was previously saved with, again using the Preset 0 working memory to prevent overwriting any saved data on the pedal.
+
+Once the pedal is configured, you can do any of the normal Live plugin tricks with it, such as:
+
+* Recording or drawing automation for the knob and expression pedal values in your track.
+* Controlling the knobs and expression settings from a Push (this is a good reason to have the plugin directly in the instrument track if your use and routing of the plugin makes sense).
+* Using Live MIDI mapping to the knobs and expression control to utilize other effects (e.g. a MIDI LFO) or an external controller to manipulate those controls in real-time.
+
+## Presets
+
+It is important to distinguish between the pedal's stored Presets (the 99 presets which are in the pedal's internal memory) and the concept of "preset" in Ableton Live. In Live, a "preset" is a configuration of plugin parameters that can be re-applied to a given plugin to configure it in a consistent and repeatable way, and to organize those collections of parameters.
+
+The H9 Remote plugin fully embraces the Ableton Live preset system, but does not integrate at all with the H9 preset system. It is important to realize that they are separate and wholly unrelated concepts. Thus, if you select a particular preset on your H9, you must synchronize the state into the H9 Remote plugin before the plugin will reflect the current state of the pedal. If you wish to recall those exact settings via the plugin in the future, you must save the Live set, in which case the plugin settings will be saved with the set. If you wish to store those settings separately for retrieval in, e.g. another Live set, save the settings as a Live preset using the top right icon of a floppy disk in the plugin view.
+
+### Preset names
+
+**Note:** Due to the difference between the H9's presets, the Live preset storage system, and the 'working memory' of the pedal, there are three distinct meanings for the term "preset name". To ensure consistency, you should at least comprehend the differences between these.
+
+When you save or load a preset in Ableton Live, you are effectively working with a file on your local storage system. The preset name, in this case, is just the name of the file. Live does not provide a direct way for a given preset filename to link its name with any variable in the plugin. Conversely, the H9 pedal itself keeps an associated name with each preset (including Preset 0, the 'working memory' preset used by the H9 Remote). Because there is no direct connection between these two, you must manage both separately.
+
+When you are inside the H9 Remote plugin, making changes to the knobs and choosing modules and algorithms, you are effectively building up a temporary preset in the working memory of the H9. Whenever you choose a new algorithm, to help ensure that things are synchronized, the name of the algorithm is stored as the name of the current temporary preset - thus if you choose the "Blackhole" algorithm on the Space module, you will see the H9 display "0.Blackhole". This shows that the current preset, number 0, is named "Blackhole" (which is the same as the algorithm currently in use).
+
+Once you are satisfied with the sound of your preset, however, you may wish to give it a distinctive name - both to confirm on the pedal that it is in fact the preset you wish to load, and for convenience when reviewing the plugin state. By double-clicking inside the plugin name field on the H9 Remote you can edit the name of the plugin. Pressing the return key will send the name to the H9.
+
+If you then save these settings as an Ableton Live preset, the name will be stored with the preset and will be recalled later to the pedal.
+
+### Pedal presets
+
+If you wish to store the current state of the H9 as a pedal preset for future offline use, simply store the preset using the pedal's own preset save function (H9 User Guide, page 18). The plugin will continue to use the Preset 0 for future algorithm changes and when reloading these exact settings later, but you will have saved a copy as a preset on the pedal itself for offline use without your computer and live set handy.
+
+# Legal blah blah
+
+This software comes with NO WARRANTY, including suitability for purpose, and by using this software you waive any and all claims against the author or his assignees for any consequences, real or imagined, arising from, out of, or in conjunction with, said use. The author disclaims all liability for use, proper or improper, of this software. Use at your own risk.
