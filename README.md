@@ -1,4 +1,4 @@
-H9 Remote v 1.0
+H9 Remote v 1.1
 =================
 
 ![Preview image of plugin in Ableton Live effects row](docs/images/preview1.1.png)
