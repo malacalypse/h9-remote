@@ -94,6 +94,8 @@ If you are using DIN MIDI but the devices are on different ports of a multi-port
 
 # Plugin Configuration and Setup
 
+![Preview image of plugin with configuration panel open](docs/images/config1.1.png)
+
 Insert the plugin after powering on and connecting your H9 to your computer. The plugin will initially load in Live with no configuration and a default preset. This preset will not initially be transmitted to the H9. In order to establish communication between the plugin and your H9, you must do the following:
 
 * Choose the right MIDI port in the dropdown. If the software successfully opens the port, the button that initially says "Rescan" will switch to "Connected". This does not mean it found an H9! It just means the MIDI port was opened and it can now send and receive MIDI data to that port.
