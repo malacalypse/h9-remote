@@ -1,7 +1,7 @@
 H9 Remote v 1.0
 =================
 
-![Preview image of plugin in Ableton Live effects row](docs/images/preview.png)
+![Preview image of plugin in Ableton Live effects row](docs/images/preview1.1.png)
 
 Copyright 2018. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
 
@@ -147,6 +147,30 @@ If you then save these settings as an Ableton Live preset, the name will be stor
 ### Pedal presets
 
 If you wish to store the current state of the H9 as a pedal preset for future offline use, simply store the preset using the pedal's own preset save function (H9 User Guide, page 18). The plugin will continue to use the Preset 0 for future algorithm changes and when reloading these exact settings later, but you will have saved a copy as a preset on the pedal itself for offline use without your computer and live set handy.
+
+## Tempo Control
+
+The time-based parameters of many algorithms can be synced to the MIDI clock in beat-values instead of milliseconds or seconds. To enable this for a given preset you need to turn on Tempo mode. Click the "Tempo" control to enable this. Please note that this requires a full preset reload as there is not presently a way to set this value aside from dumping the preset to the pedal. So turning this on and off will take slightly longer. This is a preset configuration value and is not able to be automated.
+
+# Advanced Options
+
+![Preview image of plugin with advanced panel open](docs/images/advanced.png)
+
+The H9 Remote offers an advanced panel for configuring additional options such as the output gain of the preset, and the knob expression pedal and performance switch mappings. Click the "Advanced >>" button to open this panel.
+
+## Expression mappings
+
+The H9 offers the ability to map knob ranges to the motion of the expression switch, and to map a single alternate position of each knob to the performance switch parameter. This appears to apply only to algorithms which feature the HotSwitch feature, as the TimeFactor, PitchFactor, and ModFactor algorithms all have a specifically mapped purpose to this switch and thus do not treat it like a "HotSwitch".
+
+Setting these mappings can be done in Eventide's own apps, via the pedal directly through a slightly arduous procedure, or, conveniently directly in the H9 Remote plugin. The expression max and min mappings refer to the "max" (full-toe) and "min" (full-heel) positions of the pedal, not to the values of the knobs. So you can for instance map a larger knob position to the "min" setting and a smaller knob position to the "max" setting so that the knob rotates counterclockwise as you move the pedal from heel to to (or the expression slider from left to right).
+
+The expression pedal and performance switch mappings WILL UPDATE the parameter on the pedal in real-time while you are adjusting the mapping. This is so that you can see on the pedal the actual values for the position you are adjusting the mapping to. For instance, if you want the full toe-position expression pedal (EXP MAX) to be the INF delay value, it would be difficult to guess which of the available values on the dial this range maps to. But if we send the CC for you, it becomes quite simple to move the dial until the H9 displays "INF". But the knob values as displayed on the automation side of the plugin will be restored as soon as you save the preset state back to the pedal.
+
+Because the H9 does not offer (at least, as currently documented by Eventide) a way to set these values via CC or SysEx, the preset must be fully dumped back to the device for these parameter mappings to take effect. By clicking on either the "Sync Down" arrow in the configuration section, or by clicking "Save <<" to close the advanced panel, the preset will be dumped. This will restore the knob values on the H9 to match the displayed knob values on the plugin, and will store the expression and performance switch mappings silently. The pedal can take a few seconds before fully recognizing these new parameters, so be patient with it.
+
+## Output gain
+
+Sometimes you find that the output gain necessary for unity gain is too low and your pedal is clipping. This happens a lot with the INF and FREEZE decay positions, and sometimes with heavy multitap delay or deep bass octaves. If you wish to set a lower (or higher) gain value for a given preset, just adjust the output gain slider and save the advanced settings to the pedal to commit your change. This control does NOT update in real time currently.
 
 # Legal blah blah
 
