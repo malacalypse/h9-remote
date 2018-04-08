@@ -23,7 +23,7 @@ Basic features include:
 * Supports Ableton M4L presets, so can store a completely separate set of presets than what is on the device.
 * Saves the device configuration in the preset - no accidentally configuring the wrong H9 if you have multiple pedals.
 * Receives and transmits knob, expression, and hotswitch changes from the pedal, for track automation recording, live performance, etc.
-* Supports 14-bit precision MIDI CC values for primary knobs (currently using only 10 bits of total precision though)
+* Supports 14-bit precision MIDI CC values for primary knobs (currently using only 10 bits of total precision though).
 * Supports Push and Live MIDI mapping to extend the controls for your H9 into the physical realm.
 * Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live set on open - ensuring your project re-opens with the right effects on the right pedal automatically, even if you didn't save the pedal configs as a preset.
 * Allows you to send and automate expression controls even if you don't have an expression pedal connected.
