@@ -7,3 +7,6 @@ Changelog
           Enabled output gain adjustment.
           Fixed a bug where the tempo switch did not trigger preset dump.
   * 1.1.1 : Don't send old mknob values with SysEx. It seems to confuse the unit sometimes. ¯\_(ツ)_/¯
+  * 1.1.2 : Support enable/disable switch on device in Live.
+            Auto-disable other instances using the same H9 port and channel - so that multiple tracks can use the same H9 or multiple presets can be switched between in the same set.
+            Send double-precision 14-bit MIDI values for primary knobs (currently restricted to 10-bits worth of precision).

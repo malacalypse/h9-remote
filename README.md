@@ -18,24 +18,25 @@ The H9 Remote is a Max For Live (M4L) Audio Effect plugin which can control an a
 Basic features include:
 
 * Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 49 algorithms currently implemented in the H9 Max.
-* Does not need the device to contain the required preset - can set any algorithm and module directly.
+* Does not need the device to contain the required preset - can set any available algorithm and module directly.
 * Operates entirely independently of the device's preset list - Does not overwrite any presets on the device.
 * Supports Ableton M4L presets, so can store a completely separate set of presets than what is on the device.
-* Saves the device configuration in the preset - no accidentally configuring the wrong H9 if you have multiple in a chain!
+* Saves the device configuration in the preset - no accidentally configuring the wrong H9 if you have multiple pedals.
 * Receives and transmits knob, expression, and hotswitch changes from the pedal, for track automation recording, live performance, etc.
+* Supports 14-bit precision MIDI CC values for primary knobs (currently using only 10 bits of total precision though)
 * Supports Push and Live MIDI mapping to extend the controls for your H9 into the physical realm.
-* Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live file on open - ensuring your project re-opens with the right effects on the right pedal automatically.
-* Allows you to send expression to the H9 even if you don't have an expression pedal connected.
+* Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live set on open - ensuring your project re-opens with the right effects on the right pedal automatically, even if you didn't save the pedal configs as a preset.
+* Allows you to send and automate expression controls even if you don't have an expression pedal connected.
+* Supports multiple plugin instances connected to the same H9 using intelligent auto-enable/disable.
+* Supports multiple H9s on separate instances, too. 
 
 **Note:** For the optimal experience, this plugin makes use of the [DSEG14 font family](https://github.com/keshikan/DSEG) and [Dotrice](https://fontlibrary.org/en/font/dotrice). Please download and install those families to see the LCD in a slightly-closer match to the actual Factor and H9 stompbox displays.
 
 Things that are not supported:
 
-* Enable/disable of the plugin.
-* Multiple instances of the plugin connected to the same H9 in the same Live set.
 * Any controls other than the 10 knobs, the epxression pedal, and the "performance switch" (repeat/freeze/hotswitch). E.g. the looper functionality or pedal bypass.
 * Turning your H9 Core or Standard into a Max (unless you own a Max already in which case your Core's additional algorithms will be automatically unlocked once you connect the Core or Standard to your account).
-* Auto-configuration of your H9 for you.
+* Auto-configuration of your H9.
 * Routing your audio to and from the H9.
 
 # Compatibility and Credit
@@ -159,6 +160,8 @@ The time-based parameters of many algorithms can be synced to the MIDI clock in 
 ![Preview image of plugin with advanced panel open](docs/images/advanced.png)
 
 The H9 Remote offers an advanced panel for configuring additional options such as the output gain of the preset, and the knob expression pedal and performance switch mappings. Click the "Advanced >>" button to open this panel.
+
+**Note:** Because these values must be saved using SysEx, they don't fully take effect until you sync the plugin state by either closing the panel (it will automatically sync) or by explicitly pressing the "sync down" arrow button. Read the sections below for more details. The primary control knobs are disabled while this panel is open to remind you that they are not currently taking effect. Any changes made to them via either the UI or by MIDI-mapped devices should update once the panel is closed; however it is advisable not to alter their settings while the panel is open for the most consistent results. 
 
 ## Expression mappings
 
