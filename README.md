@@ -28,7 +28,7 @@ Basic features include:
 * Remembers which H9 each instance of the plugin was connected to, and restores the saved configuration from your Live set on open - ensuring your project re-opens with the right effects on the right pedal automatically, even if you didn't save the pedal configs as a preset.
 * Allows you to send and automate expression controls even if you don't have an expression pedal connected.
 * Supports multiple plugin instances connected to the same H9 using intelligent auto-enable/disable.
-* Supports multiple H9s on separate instances, too. 
+* Supports multiple H9s on separate instances, too.
 
 **Note:** For the optimal experience, this plugin makes use of the [DSEG14 font family](https://github.com/keshikan/DSEG) and [Dotrice](https://fontlibrary.org/en/font/dotrice). Please download and install those families to see the LCD in a slightly-closer match to the actual Factor and H9 stompbox displays.
 
@@ -139,13 +139,17 @@ The H9 Remote plugin fully embraces the Ableton Live preset system, but does not
 
 **Note:** Due to the difference between the H9's presets, the Live preset storage system, and the 'working memory' of the pedal, there are three distinct meanings for the term "preset name". To ensure consistency, you should at least comprehend the differences between these.
 
-When you save or load a preset in Ableton Live, you are effectively working with a file on your local storage system. The preset name, in this case, is just the name of the file. Live does not provide a direct way for a given preset filename to link its name with any variable in the plugin. Conversely, the H9 pedal itself keeps an associated name with each preset (including Preset 0, the 'working memory' preset used by the H9 Remote). Because there is no direct connection between these two, you must manage both separately.
+1. When you save or load a preset in Ableton Live, you are effectively working with a file on your local storage system. The preset name, in this case, is just the name of the file. Live does not provide a direct way for a given preset filename to link its name with any variable in the plugin.
+1. The H9 pedal itself contains up to 99 preloaded presets, each of which has it's own preset name to help you identify them when scrolling through using the footswitches or the preset hotknob function. These are not modified by the H9 Remote plugin, but can be read into the plugin when syncing the pedal state using the "sync up" arrow button.
+1. The pedal also contains a working memory (preset 0) which is separate from the saved presets on the pedal. This working memory is used when a preset is loaded and allows you to make changes to the preset without overwriting the stored values in memory. This dynamic preset in working memory can also be given it's own name to be displayed on the front of the H9. This is the preset name reflected in the display of the H9 Remote plugin, just under the algorithm name.
 
-When you are inside the H9 Remote plugin, making changes to the knobs and choosing modules and algorithms, you are effectively building up a temporary preset in the working memory of the H9. Whenever you choose a new algorithm, to help ensure that things are synchronized, the name of the algorithm is stored as the name of the current temporary preset - thus if you choose the "Blackhole" algorithm on the Space module, you will see the H9 display "0.Blackhole". This shows that the current preset, number 0, is named "Blackhole" (which is the same as the algorithm currently in use).
+Because there is no direct connection between the Ableton Live preset name and the H9 working preset name, you must manage both separately.
 
-Once you are satisfied with the sound of your preset, however, you may wish to give it a distinctive name - both to confirm on the pedal that it is in fact the preset you wish to load, and for convenience when reviewing the plugin state. By double-clicking inside the plugin name field on the H9 Remote you can edit the name of the plugin. Pressing the return key will send the name to the H9.
+When you are inside the H9 Remote plugin, making changes to the knobs and choosing modules and algorithms, you are effectively building up a temporary preset in the working memory of the H9. Whenever you choose a new algorithm, to help ensure that things are synchronized, the name of the algorithm is stored as the name of the current temporary preset - thus if you choose the "Blackhole" algorithm on the Space module, you will see the H9 display "0.Blackhole" to confirm that you have begun working on a preset based on a new algorithm.
 
-If you then save these settings as an Ableton Live preset, the name will be stored with the preset and will be recalled later to the pedal.
+Once you are satisfied with the sound of your preset, however, you may wish to give it a distinctive name to display on the pedal and in the plugin. By double-clicking inside the plugin name field on the H9 Remote you can edit the name of the preset. Pressing the return key will send the name to the H9.
+
+If you then save these settings as an Ableton Live preset, you can choose to use any filename in particular, but regardless of what you name the file, the preset name entered in the plugin will be stored with the preset and will be recalled later to the pedal. Thus, it is recommended that you include in the name of your preset files the name of the preset you intend to display on the H9 or things can get confusing pretty quickly. Of course, if your intent is to confuse people, here's a great place to start.
 
 ### Pedal presets
 
@@ -153,7 +157,7 @@ If you wish to store the current state of the H9 as a pedal preset for future of
 
 ## Tempo Control
 
-The time-based parameters of many algorithms can be synced to the MIDI clock in beat-values instead of milliseconds or seconds. To enable this for a given preset you need to turn on Tempo mode. Click the "Tempo" control to enable this. Please note that this requires a full preset reload as there is not presently a way to set this value aside from dumping the preset to the pedal. So turning this on and off will take slightly longer. This is a preset configuration value and is not able to be automated.
+The time-based parameters of many algorithms can be synced to the MIDI clock in beat-values instead of milliseconds or seconds. To enable this for a given preset you need to turn on Tempo mode. Click the "Tempo" control to enable this. Please note that this requires a full preset reload as there is not presently a way to set this value aside from dumping the preset to the pedal. So turning this on and off will take slightly longer. This is a preset configuration value and is not configured for automation.
 
 # Advanced Options
 
@@ -161,7 +165,7 @@ The time-based parameters of many algorithms can be synced to the MIDI clock in 
 
 The H9 Remote offers an advanced panel for configuring additional options such as the output gain of the preset, and the knob expression pedal and performance switch mappings. Click the "Advanced >>" button to open this panel.
 
-**Note:** Because these values must be saved using SysEx, they don't fully take effect until you sync the plugin state by either closing the panel (it will automatically sync) or by explicitly pressing the "sync down" arrow button. Read the sections below for more details. The primary control knobs are disabled while this panel is open to remind you that they are not currently taking effect. Any changes made to them via either the UI or by MIDI-mapped devices should update once the panel is closed; however it is advisable not to alter their settings while the panel is open for the most consistent results. 
+**Note:** Because these values must be saved using SysEx, they don't fully take effect until you sync the plugin state by either closing the panel (it will automatically sync) or by explicitly pressing the "sync down" arrow button. Read the sections below for more details. The primary control knobs are disabled while this panel is open to remind you that they are not currently taking effect. Any changes made to them via either the UI or by MIDI-mapped devices should update once the panel is closed; however it is advisable not to alter their settings while the panel is open for the most consistent results.
 
 ## Expression mappings
 
