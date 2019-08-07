@@ -17,7 +17,7 @@ The H9 Remote is a Max For Live (M4L) Audio Effect plugin which can control an a
 
 Basic features include:
 
-* Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 49 algorithms currently implemented in the H9 Max.
+* Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 51 algorithms currently implemented in the H9 Max.
 * Does not need the device to contain the required preset - can set any available algorithm and module directly.
 * Operates entirely independently of the device's preset list - Does not overwrite any presets on the device.
 * Supports Ableton M4L presets, so can store a completely separate set of presets than what is on the device.
