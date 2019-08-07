@@ -47,3 +47,5 @@
 "4 5", Sculpt;
 "5 5", CrushStation;
 "6 5", PitchFuzz;
+"7 5", HotSawz;
+"8 5", Harmadillo;

@@ -1,4 +1,4 @@
-H9 Remote v 1.1
+H9 Remote v 1.1.3
 =================
 
 [![Preview image of plugin in Ableton Live effects row](docs/images/preview1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.2.amxd)

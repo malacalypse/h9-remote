@@ -48,3 +48,5 @@
 "4 5", Sculpt Mix Bandmix Xover Low-Drive High-Drive Compressor "Low Boost" Filter-Pre Filter-Post Env-Filter HotSwitch;
 "5 5", CrushStation Mix Drive Sustain Sag Octaves Grit Bass Mids "Mids Freq" Treble HotSwitch;
 "6 5", PitchFuzz Fuzz "Fuzz Tone" "Pitch Amt" "Pitch A" "Pitch B" "PItch C" "Delay Level" "Delay 1" "Delay 2" Feedback HotSwitch;
+"7 5", HotSawz Mix "Osc Depth" Cutoff Resonance LFO/Speed "LFO Amount" Attack Decay Gate Envelope HotSwitch;
+"8 5", Harmadillo Depth Rate Shape X-Over X-Overlap Drive "Env Depth" "Env Rate" "Env X-Over" Tone HotSwitch;

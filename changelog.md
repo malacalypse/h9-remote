@@ -10,3 +10,4 @@ Changelog
   * 1.1.2 : Support enable/disable switch on device in Live.
             Auto-disable other instances using the same H9 port and channel - so that multiple tracks can use the same H9 or multiple presets can be switched between in the same set.
             Send double-precision 14-bit MIDI values for primary knobs (currently restricted to 10-bits worth of precision).
+  * 1.1.3 : Add Hotsawz and Harmadillo Algorithms
