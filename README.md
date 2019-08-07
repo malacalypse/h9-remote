@@ -1,7 +1,7 @@
 H9 Remote v 1.1.3
 =================
 
-[![Preview image of plugin in Ableton Live effects row](docs/images/preview1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.2.amxd)
+[![Preview image of plugin in Ableton Live effects row](docs/images/preview-1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.2.amxd)
 
 Copyright 2018. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
 
@@ -95,7 +95,7 @@ If you are using DIN MIDI but the devices are on different ports of a multi-port
 
 # Plugin Configuration and Setup
 
-![Preview image of plugin with configuration panel open](docs/images/config1.1.png)
+![Preview image of plugin with configuration panel open](docs/images/config-1.1.png)
 
 Insert the plugin after powering on and connecting your H9 to your computer. The plugin will initially load in Live with no configuration and a default preset. This preset will not initially be transmitted to the H9. In order to establish communication between the plugin and your H9, you must do the following:
 
@@ -161,7 +161,7 @@ The time-based parameters of many algorithms can be synced to the MIDI clock in 
 
 # Advanced Options
 
-![Preview image of plugin with advanced panel open](docs/images/advanced.png)
+![Preview image of plugin with advanced panel open](docs/images/advanced-1.1.png)
 
 The H9 Remote offers an advanced panel for configuring additional options such as the output gain of the preset, and the knob expression pedal and performance switch mappings. Click the "Advanced >>" button to open this panel.
 
