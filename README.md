@@ -61,18 +61,18 @@ Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 
   - [EXP] : 11 (the default MIDI CC for expression)
   - Ensure KB0-KB9 map to 22..31 - this is the default but if you or a previous owner customized these values, you'll need to set them back to this range, and sequential.
   - You can set the other controls to receive CCs as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything, though.
-- [XMT.CC] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation).
-  - [PSW] : 71. Same as under [RCV.CTL]
-  - [EXP] : 11.
+- [XMT.CC] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation). These should mostly match the RCV.CTL settings as the plugin uses the same value for listening and transmitting.
+  - [TIP/RNG/T+R] : If you have an expression pedal + footswitch combo, use RNG. If you don't, most likely you want TIP, unless you're using a dual footswitch (or triple) in which case you should be able to figure out what you're doing on your own. Just don't set more than one of these to the same value or things will get confused. In either case, set the appropriate entry to 71 (or whatever you've also set RCV.CTL > PSW to, if you changed that too). 
+  - [EXP] : 11
   - Ensure KB0-KB9 map to 22..31 just as for the RCV.CTL settings.
-  - You can set the other contorls to send CC as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything though. Best to make sure these values match with the ones set in RVC.CTL.
-- [XMT.PC] : Does not matter as far as the plugin is concerned, but OFF can prevent MIDI loops in some cases.
+  - You can set the other controls to send CC as well, but right now the H9 Remote does not support them. It won't hurt anything though. Best to make sure these values match with the ones set in RVC.CTL too.
+- [XMT.PC] : Does not matter as far as the plugin is concerned, but OFF can prevent MIDI loops in some cases. Only set this to ON if you really know what you're doing.
 - [CTL.XMT] : Set to ON. This is essential.
-- [PGM.XMT] : Set to ON. This may be supported in a near-future version.
+- [PGM.XMT] : Set to ON. This may be supported in a later version.
 - [SYS ID] : Leave at 1 unless you have more than one H9, then see the cautions under the following section "Multiple H9s".
-- [OUTPUT] : Merge is generally safe, but the proper value here depends on if you're using DIN MIDI and what your routing looks like. You'll need to use your own judgement here.
+- [OUTPUT] : Merge is generally safe, but the proper value here depends on if you're using DIN MIDI and what your routing looks like. You'll need to use your own judgement here. Only change it from the default if you know what you're doing.
 - [CLK IN] : ON
-- [CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo, then set this to ON.
+- [CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo instead of the other way around, then set this to ON.
 
 With these settings, minimal configuration of the plugin will be necessary. If you have only one H9, you can skip straight on to the Plugin Configuration.
 
@@ -80,7 +80,7 @@ With these settings, minimal configuration of the plugin will be necessary. If y
 
 If you have more than one H9, there are two important things to consider:
 
-* Under USB: Each H9 must have a uniquely named MIDI port
+* Under USB: Each H9 must have a uniquely named MIDI port (keep the SysEx ID set to 1 for all of them).
 * Under DIN MIDI: Each H9 must have a unique SysEx ID and MIDI channel.
 
 ### USB
