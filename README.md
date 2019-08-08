@@ -52,7 +52,7 @@ The H9 Remote includes the imp.MIDI toolkit from The Impersonal Stereo (https://
 
 Before the plugin can correctly connect to your H9, you must set a few parameters on the H9 itself. Unfortunately, some of them cannot be configured through the iPod/Android App or the H9 Control software, but must be configured directly on the device.
 
-Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 explains how to enter System Mode, and the following pages explain how to navigate through these modes. The necessary settings are entirely under the MIDI menu and are as follows:
+Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 explains how to enter System Mode, and the following pages explain how to navigate through these modes. It is highly advised that you read and understand this section of the manual. The necessary settings are entirely under the MIDI menu and are as follows:
 
 - [RCV CH] : Set this to whatever MIDI channel you want. If you'll be using this H9 via USB, you can set this to 1, but if you'll be using it over DIN MIDI you'll need to ensure that this channel is unique to this device.
 - [XMT CH] : Ideally this should be set to the same thing as RCV CH. Only make them different if you are dead certain you know what you're doing.
@@ -70,7 +70,7 @@ Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 
 - [CTL.XMT] : Set to ON. This is essential.
 - [PGM.XMT] : Set to ON. This may be supported in a later version.
 - [SYS ID] : Leave at 1 unless you have more than one H9, then see the cautions under the following section "Multiple H9s".
-- [OUTPUT] : Merge is generally safe, but the proper value here depends on if you're using DIN MIDI and what your routing looks like. You'll need to use your own judgement here. Only change it from the default if you know what you're doing.
+- [OUTPUT] : XMT. Never THRU or THRU+C. Merge is ok, but only use that if you've fully read the warning in the manual and know precisely what and why you're doing it. 
 - [CLK IN] : ON
 - [CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo instead of the other way around, then set this to ON.
 
