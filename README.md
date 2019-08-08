@@ -61,7 +61,7 @@ Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 
   - [EXP] : 11 (the default MIDI CC for expression)
   - Ensure KB0-KB9 map to 22..31 - this is the default but if you or a previous owner customized these values, you'll need to set them back to this range, and sequential.
   - You can set the other controls to receive CCs as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything, though.
-- [XMT.CTL] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation).
+- [XMT.CC] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation).
   - [PSW] : 71. Same as under [RCV.CTL]
   - [EXP] : 11.
   - Ensure KB0-KB9 map to 22..31 just as for the RCV.CTL settings.
