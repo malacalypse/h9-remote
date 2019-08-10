@@ -38,7 +38,7 @@ Things that are not supported:
 * Turning your H9 Core or Standard into a Max (unless you own a Max already in which case your Core's additional algorithms will be automatically unlocked once you connect the Core or Standard to your account).
 * Auto-configuration of your H9.
 * Routing your audio to and from the H9.
-* The silly fake knob movement graphics in H9 Control when you use the expression pedal.
+* The fake knob movement graphics in H9 Control when you use the expression pedal.
 
 # Compatibility and Credit
 
