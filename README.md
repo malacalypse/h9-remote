@@ -181,7 +181,7 @@ Because the H9 does not offer (at least, as currently documented by Eventide) a 
 
 ## Output gain
 
-Sometimes you find that the output gain necessary for unity gain is too low and your pedal is clipping. This happens a lot with the INF and FREEZE decay positions, and sometimes with heavy multitap delay or deep bass octaves. If you wish to set a lower (or higher) gain value for a given preset, just adjust the output gain slider and save the advanced settings to the pedal to commit your change. This control does NOT update in real time currently.
+Sometimes you find that the output gain of a given preset is too high and your pedal is clipping. This happens a lot with the INF and FREEZE decay positions, and sometimes with heavy multitap delay or deep bass octaves. If you wish to set a lower (or higher) gain value for a given preset, just adjust the output gain slider and save the advanced settings to the pedal to commit your change. This control does NOT update in real time currently.
 
 # Legal blah blah
 
