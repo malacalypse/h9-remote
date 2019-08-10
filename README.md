@@ -39,7 +39,7 @@ Things that are not supported:
 * Auto-configuration of your H9.
 * Routing your audio to and from the H9.
 * Updating the knob position when the expression pedal value changes.
-* _Any use in conjunction with H9 Control_ (they don't play well together when run simultaneously).
+* **Any use in conjunction with H9 Control** (they don't play well together when run simultaneously).
 
 # Compatibility and Credit
 
