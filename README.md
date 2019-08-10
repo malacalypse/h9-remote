@@ -35,7 +35,7 @@ Basic features include:
 Things that are not supported:
 
 * Any controls other than the 10 knobs, the epxression pedal, and the "performance switch" (repeat/freeze/hotswitch). E.g. the looper functionality or pedal bypass.
-* Turning your H9 Core or Standard into a Max (unless you own a Max already in which case your Core's additional algorithms will be automatically unlocked once you connect the Core or Standard to your account).
+* Any algorithms your pedal does not have access to.
 * Auto-configuration of your H9.
 * Routing your audio to and from the H9.
 * The fake knob movement graphics in H9 Control when you use the expression pedal.
