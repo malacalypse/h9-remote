@@ -3,7 +3,7 @@ H9 Remote v 1.1.3
 
 [![Preview image of plugin in Ableton Live effects row](docs/images/preview-1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.2.amxd)
 
-Copyright 2018. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
+Copyright 2018-2020. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
 
 *Eventide and the Eventide logo are a registered trademark of Eventide, Inc.  The names of various algorithms may also be trademarks or registered trademarks of Eventide Inc., and are referenced herein for compatibility and interoperability only.*
 
