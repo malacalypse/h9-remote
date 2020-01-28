@@ -1,7 +1,7 @@
-H9 Remote v 1.1.3
+H9 Remote v 1.1.4
 =================
 
-[![Preview image of plugin in Ableton Live effects row](docs/images/preview-1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.2.amxd)
+[![Preview image of plugin in Ableton Live effects row](docs/images/preview-1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.4.amxd)
 
 Copyright 2018-2020. Use of this software, the provided plugin, and any additional resources provided, unless listed below under "Credit", is permitted under the conditions of the [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. All other rights are reserved.
 
@@ -17,7 +17,7 @@ The H9 Remote is a Max For Live (M4L) Audio Effect plugin which can control an a
 
 Basic features include:
 
-* Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 51 algorithms currently implemented in the H9 Max.
+* Fully supports all 5 modules (TimeFactor, ModFactor, PitchFactor, Space, and H9) and all 52 algorithms currently implemented in the H9 Max.
 * Does not need the device to contain the required preset - can set any available algorithm and module directly.
 * Operates entirely independently of the device's preset list - Does not overwrite any presets on the device.
 * Supports Ableton M4L presets, so can store a completely separate set of presets than what is on the device.
