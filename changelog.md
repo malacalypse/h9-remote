@@ -11,3 +11,4 @@ Changelog
             Auto-disable other instances using the same H9 port and channel - so that multiple tracks can use the same H9 or multiple presets can be switched between in the same set.
             Send double-precision 14-bit MIDI values for primary knobs (currently restricted to 10-bits worth of precision).
   * 1.1.3 : Add Hotsawz and Harmadillo Algorithms
+  * 1.1.4 : Add Tricerachorus algorithm. Fix a nasty bug with multiple instances sharing the same H9 under some specific conditions.
