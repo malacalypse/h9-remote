@@ -49,3 +49,4 @@
 "6 5", PitchFuzz;
 "7 5", HotSawz;
 "8 5", Harmadillo;
+"9 5", Tricerachorus;
