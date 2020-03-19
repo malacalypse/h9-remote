@@ -1,4 +1,4 @@
-H9 Remote v 1.1.4
+H9 Remote v 1.1.5
 =================
 
 [![Preview image of plugin in Ableton Live effects row](docs/images/preview-1.1.png)](https://github.com/malacalypse/h9-remote/raw/master/H9%20Remote%201.1.4.amxd)
@@ -64,7 +64,7 @@ Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 
   - Ensure KB0-KB9 map to 22..31 - this is the default but if you or a previous owner customized these values, you'll need to set them back to this range, and sequential.
   - You can set the other controls to receive CCs as well, but as of v 1.0.0 the H9 Remote does not support them. It won't hurt anything, though.
 - [XMT.CC] : This sets up the H9 to send it's own Knob and Expression changes (e.g. when you use an attached physical expression pedal, the H9 Remote will track it and can send to Live's automation). These should mostly match the RCV.CTL settings as the plugin uses the same value for listening and transmitting.
-  - [TIP/RNG/T+R] : If you have an expression pedal + footswitch combo, use RNG. If you don't, most likely you want TIP, unless you're using a dual footswitch (or triple) in which case you should be able to figure out what you're doing on your own. Just don't set more than one of these to the same value or things will get confused. In either case, set the appropriate entry to 71 (or whatever you've also set RCV.CTL > PSW to, if you changed that too). 
+  - [TIP/RNG/T+R] : If you have an expression pedal + footswitch combo, use RNG. If you don't, most likely you want TIP, unless you're using a dual footswitch (or triple) in which case you should be able to figure out what you're doing on your own. Just don't set more than one of these to the same value or things will get confused. In either case, set the appropriate entry to 71 (or whatever you've also set RCV.CTL > PSW to, if you changed that too).
   - [EXP] : 11
   - Ensure KB0-KB9 map to 22..31 just as for the RCV.CTL settings.
   - You can set the other controls to send CC as well, but right now the H9 Remote does not support them. It won't hurt anything though. Best to make sure these values match with the ones set in RVC.CTL too.
@@ -72,7 +72,7 @@ Using the [H9 User Guide](https://www.eventideaudio.com/downloader/28), page 31 
 - [CTL.XMT] : Set to ON. This is essential.
 - [PGM.XMT] : Set to ON. This may be supported in a later version.
 - [SYS ID] : Leave at 1 unless you have more than one H9, then see the cautions under the following section "Multiple H9s".
-- [OUTPUT] : XMT. Never THRU or THRU+C. Merge is ok, but only use that if you've fully read the warning in the manual and know precisely what and why you're doing it. 
+- [OUTPUT] : XMT. Never THRU or THRU+C. Merge is ok, but only use that if you've fully read the warning in the manual and know precisely what and why you're doing it.
 - [CLK IN] : ON
 - [CLK OUT] : Doesn't matter unless you want Live to follow the H9's tempo instead of the other way around, then set this to ON.
 

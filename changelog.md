@@ -12,3 +12,4 @@ Changelog
             Send double-precision 14-bit MIDI values for primary knobs (currently restricted to 10-bits worth of precision).
   * 1.1.3 : Add Hotsawz and Harmadillo Algorithms
   * 1.1.4 : Add Tricerachorus algorithm. Fix a nasty bug with multiple instances sharing the same H9 under some specific conditions.
+  * 1.1.5 : Fix minor issue with performance switch and vintage algorithms.
