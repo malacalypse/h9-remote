@@ -44,7 +44,7 @@ Things that are not supported:
 # Compatibility and Credit
 
 H9 Remote is compatible with Ableton Live 9 and 10. No guarantees are made of compatiblity with any other version, although it might work.
-It has only been tested on Mac, and no guarantee of compatiblity with Windows is offered nor is planned to be.
+It has only been tested on Mac, and **no guarantee of compatibility with Windows is offered nor is planned to be**.
 
 A basic understanding of MIDI, channels, CC numbers, and device configuration/operation is assumed. This is not a tutorial.
 
