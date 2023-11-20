@@ -9,6 +9,10 @@ Copyright 2018-2020. Use of this software, the provided plugin, and any addition
 
 *This software is not produced by, nor affiliated in any way with, Eventide Inc. Please direct all issues or feature requests through this github page.*
 
+# This software is un-maintained!
+
+Due to Eventide's announcement that the H9 will not be receiving any more algorithms, I have decided to archive this project as legacy code. I will leave it available for others to make use of, play with, and otherwise enjoy, subject to the CC-BY-NC-SA 4.0 license terms. However, I will no longer be maintaining or supporting it in any way. It is what it is, at this point.
+
 # Description
 
 The H9 Remote is a Max For Live (M4L) Audio Effect plugin which can control an attached H9 stompbox in real time, supporting Ableton Live's automation and MIDI mapping and enabling saving the pedal preset state in a Live set or Live preset for future recall, even if the pedal has been completely reprogrammed in the meantime.
